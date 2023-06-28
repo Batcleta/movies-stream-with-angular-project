@@ -1,0 +1,20 @@
+<div *ngFor="let movie of movies" class="w-36 bg-slate-50">
+  <div>
+    <img
+      [src]="
+        'https://image.tmdb.org/t/p/w220_and_h330_face' + movie.poster_path
+      "
+      alt=""
+    />
+  </div>
+
+  <div>
+    <div>
+      <h4>Titulo</h4>
+      <small>ano: 2007</small>
+    </div>
+    <div>
+      <div>assistir</div>
+    </div>
+  </div>
+</div>
