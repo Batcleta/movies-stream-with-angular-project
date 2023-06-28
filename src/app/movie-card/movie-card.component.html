@@ -1,17 +1,17 @@
-<div *ngFor="let movie of movies" class="w-36 bg-slate-50">
-  <div>
+<div *ngFor="let movie of movies" class="w-36 bg-slate-50 relative h-56">
+  <div class="absolute">
     <img
       [src]="
         'https://image.tmdb.org/t/p/w220_and_h330_face' + movie.poster_path
       "
-      alt=""
+      [alt]="movie.original_title"
     />
   </div>
 
-  <div>
+  <div class="absolute">
     <div>
-      <h4>Titulo</h4>
-      <small>ano: 2007</small>
+      <h4>{{ movie.original_title }}</h4>
+      <small>ano: {{ movie.release_date }}</small>
     </div>
     <div>
       <div>assistir</div>
