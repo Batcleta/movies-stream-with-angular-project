@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { movieObject } from 'src/@types/movie-object-type';
 import { HttpClient } from '@angular/common/http';
 
@@ -9,6 +9,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class MovieCardComponent {
   @Input() movies: movieObject[] = [];
+  @Output() movieWatched = new EventEmitter<movieObject>();
 
   constructor(private request: HttpClient) {}
+
+  markMovieAsWatched(movie: movieObject) {
+    this.movieWatched.emit(movie);
+  }
 }

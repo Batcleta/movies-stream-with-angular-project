@@ -13,5 +13,5 @@ export type movieObject = {
   video: boolean;
   vote_average: number;
   vote_count: number;
-  watched?: string;
+  watched?: boolean;
 };

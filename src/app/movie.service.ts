@@ -25,6 +25,7 @@ export class MovieService {
         video: false,
         vote_average: 7.3,
         vote_count: 2093,
+        watched: true,
       },
       {
         adult: false,

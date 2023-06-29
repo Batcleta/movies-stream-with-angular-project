@@ -19,4 +19,11 @@ export class MoviesListComponent {
   get watchedMovies(): any[] {
     return this.movies.filter((movie) => movie.watched);
   }
+
+  onMovieWatched(movie: movieObject) {
+    const movieIndex = this.movies.findIndex((m) => m.id === movie.id);
+    if (movieIndex !== -1) {
+      this.movies[movieIndex].watched = !this.movies[movieIndex].watched;
+    }
+  }
 }
