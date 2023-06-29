@@ -26,4 +26,11 @@ export class MoviesListComponent {
       this.movies[movieIndex].watched = !this.movies[movieIndex].watched;
     }
   }
+
+  onMovieExcluded(movie: movieObject) {
+    const movieIndex = this.movies.findIndex((m) => m.id === movie.id);
+    if (movieIndex !== -1) {
+      this.movies.splice(movieIndex, 1);
+    }
+  }
 }

@@ -9,6 +9,7 @@
   <app-movie-card
     [movies]="nonWatchedMovies"
     (movieWatched)="onMovieWatched($event)"
+    (excluseMovie)="onMovieExcluded($event)"
     class="flex gap-2 flex-wrap justify-center w-full mt-4"
   ></app-movie-card>
 </div>
@@ -18,6 +19,7 @@
   <h3>Assistidos</h3>
   <app-movie-card
     [movies]="watchedMovies"
+    (excluseMovie)="onMovieExcluded($event)"
     (movieWatched)="onMovieWatched($event)"
     class="flex gap-2 flex-wrap justify-center"
   ></app-movie-card>

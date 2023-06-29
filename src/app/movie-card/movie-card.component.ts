@@ -10,10 +10,15 @@ import { HttpClient } from '@angular/common/http';
 export class MovieCardComponent {
   @Input() movies: movieObject[] = [];
   @Output() movieWatched = new EventEmitter<movieObject>();
+  @Output() excluseMovie = new EventEmitter<movieObject>();
 
   constructor(private request: HttpClient) {}
 
   markMovieAsWatched(movie: movieObject) {
     this.movieWatched.emit(movie);
+  }
+
+  markToExclude(movie: movieObject) {
+    this.excluseMovie.emit(movie);
   }
 }
