@@ -1,0 +1,22 @@
+<div class="flex justify-between w-full mt-10 px-4">
+  <h2>01</h2>
+  <a routerLink="/new-movie"> novo </a>
+</div>
+<div class="w-full border-b border-slate-500 mt-4"></div>
+
+<div class="py-5 px-4">
+  <h3>Catálogo</h3>
+  <app-movie-card
+    [movies]="nonWatchedMovies"
+    class="flex gap-2 flex-wrap justify-center w-full mt-4"
+  ></app-movie-card>
+</div>
+<div class="w-full border-b border-slate-500 mt-4"></div>
+
+<div class="py-5 px-4">
+  <h3>Assistidos</h3>
+  <app-movie-card
+    [movies]="watchedMovies"
+    class="flex gap-2 flex-wrap justify-center"
+  ></app-movie-card>
+</div>

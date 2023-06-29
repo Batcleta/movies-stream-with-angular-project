@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { MovieService } from '../movie.service';
+import { Component, Input } from '@angular/core';
 import { movieObject } from 'src/@types/movie-object-type';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-movie-card',
@@ -8,7 +8,7 @@ import { movieObject } from 'src/@types/movie-object-type';
   styleUrls: ['./movie-card.component.css'],
 })
 export class MovieCardComponent {
-  constructor(private productService: MovieService) {}
+  @Input() movies: movieObject[] = [];
 
-  movies: movieObject[] = this.productService.getMoviesList();
+  constructor(private request: HttpClient) {}
 }

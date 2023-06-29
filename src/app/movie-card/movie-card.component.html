@@ -1,20 +1,37 @@
-<div *ngFor="let movie of movies" class="w-36 bg-slate-50 relative h-56">
-  <div class="absolute">
+<div
+  *ngFor="let movie of movies"
+  class="w-40 bg-slate-50 h-60 relative group flex justify-center overflow-hidden"
+>
+  <!-- <div class="absolute group-hover:scale-125 transition-all">
     <img
+      height=""
       [src]="
         'https://image.tmdb.org/t/p/w220_and_h330_face' + movie.poster_path
       "
       [alt]="movie.original_title"
     />
+  </div> -->
+
+  <div
+    class="bg-slate-950 absolute opacity-0 group-hover:opacity-80 transition-all h-full w-full"
+  ></div>
+
+  <div
+    class="rounded-full bg-green-950 absolute right-1 top-1 w-5 h-5 text-white flex justify-center items-center opacity-0 group-hover:opacity-100 transition-all"
+  >
+    <small>x</small>
   </div>
 
-  <div class="absolute">
-    <div>
+  <div
+    class="absolute opacity-0 group-hover:opacity-100 transition-all h-full w-full flex flex-col justify-between p-3"
+  >
+    <div class="text-white">
       <h4>{{ movie.original_title }}</h4>
       <small>ano: {{ movie.release_date }}</small>
     </div>
-    <div>
-      <div>assistir</div>
+    <div class="flex gap-2">
+      <input type="checkbox" name="" id="" />
+      <div class="text-white">assistido</div>
     </div>
   </div>
 </div>
