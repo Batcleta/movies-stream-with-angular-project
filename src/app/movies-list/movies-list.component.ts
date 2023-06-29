@@ -8,6 +8,7 @@ import { movieObject } from 'src/@types/movie-object-type';
   styleUrls: ['./movies-list.component.css'],
 })
 export class MoviesListComponent {
+  isModalOpen = false;
   movies: movieObject[] = this.movieService.getMoviesList();
 
   constructor(private movieService: MovieService) {}

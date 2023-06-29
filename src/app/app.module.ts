@@ -9,6 +9,7 @@ import { MoviesListComponent } from './movies-list/movies-list.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { NewMovieComponent } from './new-movie/new-movie.component';
 import { RouterModule, Routes } from '@angular/router';
+import { RateModalComponent } from './rate-modal/rate-modal.component';
 
 const appRoutes: Routes = [
   { path: '', component: MoviesListComponent },
@@ -23,6 +24,7 @@ const appRoutes: Routes = [
     MoviesListComponent,
     MovieDetailsComponent,
     NewMovieComponent,
+    RateModalComponent,
   ],
   imports: [
     BrowserModule,
