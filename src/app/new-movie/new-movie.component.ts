@@ -20,7 +20,9 @@ export class NewMovieComponent {
         this.searchQuery
       );
 
-      this.movies = response.results;
+      this.movies = response.results.filter(
+        (movie) => movie.overview && movie.poster_path
+      );
 
       console.log(this.searchQuery);
       console.log(this.movies);
