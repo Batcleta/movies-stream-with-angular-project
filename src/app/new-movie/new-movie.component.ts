@@ -49,11 +49,9 @@ export class NewMovieComponent {
 
     this.movieService.addNewMovie(movie).subscribe(
       (response) => {
-        // Handle the successful response, if needed
         console.log('Movie added successfully:', response);
       },
       (error) => {
-        // Handle any errors that occur during the request
         console.error('Error adding movie:', error);
       }
     );
