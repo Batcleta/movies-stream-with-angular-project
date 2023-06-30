@@ -60,7 +60,7 @@ export class MovieDetailsComponent implements OnInit {
       this.movies[movieIndex].rating = watchedParams.rating;
       this.movies[movieIndex].comment = watchedParams.comment;
 
-      this.movieService.updateMoviesList(this.movies).subscribe(
+      this.movieService.updateMovie(this.movies[movieIndex]).subscribe(
         (updatedMovies) => {
           console.log('Movies list updated:', updatedMovies);
         },
