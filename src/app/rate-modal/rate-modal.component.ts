@@ -1,5 +1,5 @@
-import { Component, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { movieWatched } from 'src/@types/movie-watched-type';
 
 @Component({
   selector: 'app-rate-modal',
@@ -7,17 +7,24 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./rate-modal.component.css'],
 })
 export class RateModalComponent {
-  @Output() rateSubmitted = new EventEmitter<any>();
+  @Output() rateSubmitted: EventEmitter<any> = new EventEmitter<any>();
+  @Output() closeModal: EventEmitter<movieWatched> = new EventEmitter<movieWatched>();
 
-  ratingForm = new FormGroup({
-    watched: new FormControl(true),
-    rating: new FormControl(''),
-    comments: new FormControl(''),
-  });
+  watchedStatus: boolean = true;
+  rating: boolean | null = null;
+  comment: string = '';
 
   submitRating() {
-    const formData = this.ratingForm.value;
+    const formData = {
+      watched: this.watchedStatus,
+      rating: this.rating === true ? "liked" : "disliked",
+      comment: this.comment,
+    };
+
     this.rateSubmitted.emit(formData);
-    // Reset the form or close the modal if needed
+  }
+
+  close() {
+    this.closeModal.emit()
   }
 }

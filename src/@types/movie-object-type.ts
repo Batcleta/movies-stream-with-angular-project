@@ -14,4 +14,6 @@ export type movieObject = {
   vote_average: number;
   vote_count: number;
   watched?: boolean;
+  rating?: string;
+  comment?: string;
 };

@@ -10,12 +10,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { NewMovieComponent } from './new-movie/new-movie.component';
 import { RouterModule, Routes } from '@angular/router';
 import { RateModalComponent } from './rate-modal/rate-modal.component';
-
-const appRoutes: Routes = [
-  { path: '', component: MoviesListComponent },
-  { path: '/new-movie', component: NewMovieComponent },
-  { path: '/movie-details', component: MovieDetailsComponent },
-];
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,10 +23,11 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     RouterModule.forRoot([
       { path: '', component: MoviesListComponent },
-      { path: 'movie-details', component: MovieDetailsComponent },
+      { path: 'movie-details/:movieId', component: MovieDetailsComponent },
       { path: 'new-movie', component: NewMovieComponent },
     ]),
     HttpClientModule,
@@ -39,4 +35,4 @@ const appRoutes: Routes = [
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MovieService } from '../movie.service';
 import { movieObject } from 'src/@types/movie-object-type';
 
@@ -7,11 +7,13 @@ import { movieObject } from 'src/@types/movie-object-type';
   templateUrl: './movies-list.component.html',
   styleUrls: ['./movies-list.component.css'],
 })
-export class MoviesListComponent {
-  isModalOpen = false;
-  movies: movieObject[] = this.movieService.getMoviesList();
+export class MoviesListComponent implements OnInit {
 
-  constructor(private movieService: MovieService) {}
+
+  movies: movieObject[] = [];
+  watchedMovie!: movieObject
+
+  constructor(private movieService: MovieService) { }
 
   get nonWatchedMovies(): any[] {
     return this.movies.filter((movie) => !movie.watched);
@@ -21,10 +23,15 @@ export class MoviesListComponent {
     return this.movies.filter((movie) => movie.watched);
   }
 
-  onMovieWatched(movie: movieObject) {
-    const movieIndex = this.movies.findIndex((m) => m.id === movie.id);
-    if (movieIndex !== -1) {
-      this.movies[movieIndex].watched = !this.movies[movieIndex].watched;
+  ngOnInit() {
+    this.fetchMovies();
+  }
+
+  async fetchMovies() {
+    try {
+      this.movies = await this.movieService.fetchMovies();
+    } catch (error) {
+      console.error('Error fetching movies:', error);
     }
   }
 
@@ -34,4 +41,8 @@ export class MoviesListComponent {
       this.movies.splice(movieIndex, 1);
     }
   }
+
+
+
+
 }

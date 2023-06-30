@@ -6,23 +6,13 @@
 
 <div class="py-5 px-4">
   <h3>Catálogo</h3>
-  <app-movie-card
-    [movies]="nonWatchedMovies"
-    (movieWatched)="onMovieWatched($event)"
-    (excluseMovie)="onMovieExcluded($event)"
-    class="flex gap-2 flex-wrap justify-center w-full mt-4"
-  ></app-movie-card>
+  <app-movie-card [movies]="nonWatchedMovies" (excluseMovie)="onMovieExcluded($event)"
+    class="flex gap-2 flex-wrap justify-center w-full mt-4"></app-movie-card>
 </div>
 <div class="w-full border-b border-slate-500 mt-4"></div>
 
 <div class="py-5 px-4">
   <h3>Assistidos</h3>
-  <app-movie-card
-    [movies]="watchedMovies"
-    (excluseMovie)="onMovieExcluded($event)"
-    (movieWatched)="onMovieWatched($event)"
-    class="flex gap-2 flex-wrap justify-center"
-  ></app-movie-card>
+  <app-movie-card [movies]="watchedMovies" (excluseMovie)="onMovieExcluded($event)"
+    class="flex gap-2 flex-wrap justify-center"></app-movie-card>
 </div>
-
-<app-rate-modal *ngIf="isModalOpen"> </app-rate-modal>
