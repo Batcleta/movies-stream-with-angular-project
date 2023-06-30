@@ -30,4 +30,8 @@ export class MovieService {
     const url = `${this.dbUrl}/${movie.id}`;
     return this.http.put<movieObject>(url, movie);
   }
+
+  addNewMovie(movie: movieObject): Observable<movieObject> {
+    return this.http.post<movieObject>(this.dbUrl, movie);
+  }
 }
