@@ -11,7 +11,8 @@ import { MovieService } from '../movie.service';
 export class NewMovieComponent {
   back = '<< Back';
   searchQuery: string = '';
-  movies: movieObject[] = [];
+  apiMovies: movieObject[] = [];
+  dbMovies: movieObject[] = [];
 
   constructor(
     private themovieodbService: ThemoviedbService,
@@ -19,16 +20,18 @@ export class NewMovieComponent {
   ) {}
 
   async searchMovies() {
+    await this.fetchMovies();
     try {
       const response = await this.themovieodbService.searchMoviesFromApi(
         this.searchQuery
       );
 
-      this.movies = response.results.filter(
-        (movie) => movie.overview && movie.poster_path
+      this.apiMovies = response.results.filter(
+        (movie) =>
+          movie.overview &&
+          movie.poster_path &&
+          !this.isMovieAlreadyAdded(movie.id)
       );
-
-      console.log(this.movies);
     } catch (error) {
       console.error('Error fetching movies:', error);
     }
@@ -54,6 +57,18 @@ export class NewMovieComponent {
         console.error('Error adding movie:', error);
       }
     );
+  }
+
+  async fetchMovies() {
+    try {
+      this.dbMovies = await this.movieService.getMoviesList();
+    } catch (error) {
+      console.error('Error fetching movies:', error);
+    }
+  }
+
+  isMovieAlreadyAdded(movieId: number): boolean {
+    return this.dbMovies.some((movie) => movie.id === movieId);
   }
 
   clearMoviesList() {}
