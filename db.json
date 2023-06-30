@@ -744,11 +744,14 @@
       "overview": "The Accident Man is back, and this time he must best the top assassins in the world to protect the ungrateful son of a mafia boss, save the life of his only friend and rekindle his relationship with his maniacal father figure.",
       "popularity": 374.963,
       "poster_path": "/npW9nfL7F3ZVpaCpabqo98KTLw6.jpg",
-      "release_date": "2022-10-14",
+      "release_date": "13/10/2022",
       "title": "Accident Man: Hitman's Holiday",
       "video": false,
       "vote_average": 6.5,
-      "vote_count": 86
+      "vote_count": 86,
+      "watched": true,
+      "rating": "disliked",
+      "comment": "asdasdasdasd"
     },
     {
       "adult": false,

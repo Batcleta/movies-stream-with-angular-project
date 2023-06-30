@@ -1,1 +1,46 @@
-<a routerLink=""> voltar </a>
+<h2 class="mt-10">
+  <a class="text-white" routerLink="">{{ back }}</a>
+</h2>
+<div class="w-full border-b border-slate-500 mt-4"></div>
+
+<h2 class="text-2xl font-bold">Movie Search</h2>
+
+<form (submit)="searchMovies()" class="mt-4">
+  <div class="flex items-center">
+    <input
+      required
+      [(ngModel)]="searchQuery"
+      name="searchQuery"
+      type="text"
+      placeholder="Search for movies"
+      class="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 flex-grow"
+    />
+    <button
+      type="submit"
+      class="px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+    >
+      Search
+    </button>
+  </div>
+</form>
+
+<div class="search-results mt-4" *ngIf="movies.length > 0">
+  <h3 class="text-xl font-bold">Search Results:</h3>
+  <ul class="mt-2">
+    <li
+      *ngFor="let movie of movies"
+      class="flex items-center justify-between border-b border-gray-300 py-2"
+    >
+      <div class="movie-details">
+        <h4 class="text-lg font-bold">{{ movie.original_title }}</h4>
+        <p class="text-gray-500">{{ movie.overview }}</p>
+      </div>
+      <button
+        (click)="selectMovie(movie)"
+        class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+      >
+        Add
+      </button>
+    </li>
+  </ul>
+</div>

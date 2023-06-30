@@ -8,12 +8,10 @@ import { movieObject } from 'src/@types/movie-object-type';
   styleUrls: ['./movies-list.component.css'],
 })
 export class MoviesListComponent implements OnInit {
-
-
   movies: movieObject[] = [];
-  watchedMovie!: movieObject
+  watchedMovie!: movieObject;
 
-  constructor(private movieService: MovieService) { }
+  constructor(private movieService: MovieService) {}
 
   get nonWatchedMovies(): any[] {
     return this.movies.filter((movie) => !movie.watched);
@@ -29,7 +27,7 @@ export class MoviesListComponent implements OnInit {
 
   async fetchMovies() {
     try {
-      this.movies = await this.movieService.fetchMovies();
+      this.movies = await this.movieService.getMoviesList();
     } catch (error) {
       console.error('Error fetching movies:', error);
     }
@@ -41,8 +39,4 @@ export class MoviesListComponent implements OnInit {
       this.movies.splice(movieIndex, 1);
     }
   }
-
-
-
-
 }
