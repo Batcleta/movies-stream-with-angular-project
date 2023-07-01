@@ -99,11 +99,14 @@
       "overview": "Noah must leave her city, boyfriend, and friends to move into William Leister's mansion, the flashy and wealthy husband of her mother Rafaela. As a proud and independent 17 year old, Noah resists living in a mansion surrounded by luxury. However, it is there where she meets Nick, her new stepbrother, and the clash of their strong personalities becomes evident from the very beginning.",
       "popularity": 1576.476,
       "poster_path": "/w46Vw536HwNnEzOa7J24YH9DPRS.jpg",
-      "release_date": "2023-06-08",
+      "release_date": "07/06/2023",
       "title": "My Fault",
       "video": false,
       "vote_average": 8.3,
-      "vote_count": 883
+      "vote_count": 883,
+      "watched": true,
+      "rating": "liked",
+      "comment": "That was awesome"
     },
     {
       "adult": false,
@@ -852,6 +855,29 @@
       "video": false,
       "vote_average": 6.8,
       "vote_count": 286
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/qUv51IFUvVRAP2379ThmA3eLJx6.jpg",
+      "genre_ids": [
+        28,
+        12,
+        14
+      ],
+      "id": 284052,
+      "original_language": "en",
+      "original_title": "Doctor Strange",
+      "overview": "After his career is destroyed, a brilliant but arrogant surgeon gets a new lease on life when a sorcerer takes him under her wing and trains him to defend the world against evil.",
+      "popularity": 74.89,
+      "poster_path": "/uGBVj3bEbCoZbDjjl9wTxcygko1.jpg",
+      "release_date": "24/10/2016",
+      "title": "Doctor Strange",
+      "video": false,
+      "vote_average": 7.426,
+      "vote_count": 20610,
+      "watched": true,
+      "rating": "disliked",
+      "comment": "asdasdasd"
     }
   ]
 }

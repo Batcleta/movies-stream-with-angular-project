@@ -20,7 +20,7 @@ export class MovieDetailsComponent implements OnInit {
   constructor(
     private movieService: MovieService,
     private route: ActivatedRoute
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.fetchMovies();
@@ -51,7 +51,7 @@ export class MovieDetailsComponent implements OnInit {
     this.isModalOpen = false;
   }
 
-  onModalSubmited(watchedParams: movieWatched) {
+  async onModalSubmited(watchedParams: movieWatched) {
     this.onCloseModal();
 
     const movieIndex = this.movies.findIndex((m) => m.id === this.movie?.id);
@@ -60,14 +60,12 @@ export class MovieDetailsComponent implements OnInit {
       this.movies[movieIndex].rating = watchedParams.rating;
       this.movies[movieIndex].comment = watchedParams.comment;
 
-      this.movieService.updateMovie(this.movies[movieIndex]).subscribe(
-        (updatedMovies) => {
-          console.log('Movies list updated:', updatedMovies);
-        },
-        (error) => {
-          console.error('Error updating movies list:', error);
-        }
-      );
+      try {
+        const updatedMovie = await this.movieService.updateMovie(this.movies[movieIndex]);
+        console.log('Movie updated successfully:', updatedMovie);
+      } catch (error) {
+        console.error('Error updating movie:', error);
+      }
     }
   }
 }

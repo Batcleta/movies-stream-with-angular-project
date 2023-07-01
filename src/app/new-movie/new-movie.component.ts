@@ -17,7 +17,7 @@ export class NewMovieComponent {
   constructor(
     private themovieodbService: ThemoviedbService,
     private movieService: MovieService
-  ) {}
+  ) { }
 
   async searchMovies() {
     await this.fetchMovies();
@@ -38,23 +38,13 @@ export class NewMovieComponent {
   }
 
   async selectMovie(movie: movieObject) {
-    const response = await this.movieService.addNewMovie(movie).subscribe(
-      (res) => {
-        alert(`The movie ${res.original_title} was sussefully added`);
-      },
-      (error) => {
-        console.error('Error adding movie:', error);
-      }
-    );
-
-    this.movieService.addNewMovie(movie).subscribe(
-      (response) => {
-        console.log('Movie added successfully:', response);
-      },
-      (error) => {
-        console.error('Error adding movie:', error);
-      }
-    );
+    try {
+      const addedMovie = await this.movieService.addNewMovie(movie);
+      alert(`The movie ${addedMovie?.original_title} was successfully added`);
+      console.log('Movie added successfully:', addedMovie);
+    } catch (error) {
+      console.error('Error adding movie:', error);
+    }
   }
 
   async fetchMovies() {
@@ -69,5 +59,5 @@ export class NewMovieComponent {
     return this.dbMovies.some((movie) => movie.id === movieId);
   }
 
-  clearMoviesList() {}
+  clearMoviesList() { }
 }

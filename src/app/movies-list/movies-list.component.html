@@ -1,18 +1,18 @@
-<div class="flex justify-between w-full mt-10 px-4">
-  <h2>01</h2>
-  <a routerLink="/new-movie"> novo </a>
+<div class="flex justify-between w-full mt-10 px-5">
+  <h2 class="text-2xl text-white">Minha lista de filmes</h2>
+  <a class="bg-indigo-500 text-white py-1 px-6 rounded-2xl hover:scale-105 transition-all" routerLink="/new-movie"> + Add New </a>
 </div>
-<div class="w-full border-b border-slate-500 mt-4"></div>
 
 <div class="py-5 px-4">
-  <h3>Catálogo</h3>
+  <h3 class=" text-lg text-indigo-400 font-medium px-1">My watch List</h3>
+  <div class="w-full border-b border-slate-500 mt-2 mb-7"></div>
   <app-movie-card [movies]="nonWatchedMovies" (excluseMovie)="onMovieExcluded($event)"
     class="flex gap-2 flex-wrap justify-center w-full mt-4"></app-movie-card>
 </div>
-<div class="w-full border-b border-slate-500 mt-4"></div>
 
 <div class="py-5 px-4">
-  <h3>Assistidos</h3>
+  <h3 class=" text-lg text-indigo-400 font-medium px-1">My Watched Movies</h3>
+  <div class="w-full border-b border-slate-500 mt-2 mb-7"></div>
   <app-movie-card [movies]="watchedMovies" (excluseMovie)="onMovieExcluded($event)"
     class="flex gap-2 flex-wrap justify-center"></app-movie-card>
 </div>

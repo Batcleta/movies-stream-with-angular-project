@@ -1,30 +1,30 @@
 <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50" >
-    <div class="bg-white relative rounded p-6">
+    <div class="bg-slate-800 relative rounded p-6">
       <div class="form-group absolute top-7 right-7">
-        <button class="close-button font-bold" (click)="close()">X</button>
+        <button class="close-button font-bold text-slate-300 px-2 bg-slate-700" (click)="close()">X</button>
       </div>
 
-      <h2 class="text-2xl font-bold mb-4">Rate Movie</h2>
+      <h2 class="text-2xl font-bold mb-4 text-white">Rate Movie</h2>
   
       <div class="mb-4">
-        <label class="font-semibold">Rating:</label>
-        <div class="flex gap-2">
-          <button [class.selected]="rating === true" (click)="rating = true" title="Thumbs Up" class="p-2 border border-gray-300 rounded">
+        <label class="font-semibold text-white">Rating:</label>
+        <div class="flex gap-2 mt-2">
+          <button [class.bg-indigo-500]="rating === true" (click)="rating = true" title="Thumbs Up" class="p-2 border border-slate-700 rounded">
             👍
           </button>
-          <button [class.selected]="rating === false" (click)="rating = false" title="Thumbs Down" class="p-2 border border-gray-300 rounded">
+          <button [class.bg-indigo-500]="rating === false" (click)="rating = false" title="Thumbs Down" class="p-2 border border-slate-700 rounded">
             👎
           </button>
         </div>
       </div>
   
       <div class="mb-4">
-        <label for="comment" class="font-semibold">Comment:</label>
-        <textarea required [(ngModel)]="comment" name="comment" id="comment" rows="4" class="w-full p-2 border border-gray-300 rounded"></textarea>
+        <label for="comment" class="font-semibold text-white">Comment:</label>
+        <textarea required [(ngModel)]="comment" name="comment" id="comment" rows="4" class=" mt-3 w-full p-2 border border-slate-700 bg-slate-700 text-slate-300 rounded"></textarea>
       </div>
   
       <div class="flex justify-end">
-        <button (click)="submitRating()" class="px-4 py-2 bg-blue-500 text-white rounded">Submit</button>
+        <button (click)="submitRating()" class="px-4 py-1 rounded-2xl  bg-indigo-500 text-white rounded">Submit</button>
       </div>
     </div>
   </div>
