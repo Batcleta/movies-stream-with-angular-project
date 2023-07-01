@@ -904,6 +904,28 @@
       "watched": true,
       "rating": "liked",
       "comment": "asdasdasd"
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/bAcga9XzjfVoKDM80LBIinYBVAw.jpg",
+      "genre_ids": [
+        28,
+        12
+      ],
+      "id": 529106,
+      "original_language": "ru",
+      "original_title": "Майор Гром: Чумной Доктор",
+      "overview": "Igor Grom is a skilled policeman from St. Petersburg, known for his daring nature and uncompromising attitude towards the criminals of all kinds. Incredible strength, analytical mind and integrity – these qualities make Major Grom the perfect policeman. Working tirelessly, he always pushes through, and meets the challenges standing in the way.",
+      "popularity": 30.683,
+      "poster_path": "/wnesEmcq7xdw1Rm1Bn6XEFTkenR.jpg",
+      "release_date": "31/03/2021",
+      "title": "Major Grom: Plague Doctor",
+      "video": false,
+      "vote_average": 6.7,
+      "vote_count": 510,
+      "watched": true,
+      "rating": "liked",
+      "comment": "asdasdasd"
     }
   ]
 }

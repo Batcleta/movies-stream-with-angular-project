@@ -25,12 +25,15 @@ export class NewMovieComponent {
         this.searchQuery
       );
 
-      this.apiMovies = response.results.filter(
-        (movie) =>
-          movie.overview &&
-          movie.poster_path &&
-          !this.isMovieAlreadyAdded(movie.id)
-      );
+      if (response) {
+        this.apiMovies = await response.results.filter(
+          (movie) =>
+            movie.overview &&
+            movie.poster_path &&
+            !this.isMovieAlreadyAdded(movie.id)
+        );
+      }
+
     } catch (error) {
       console.error('Error fetching movies:', error);
     }
@@ -40,7 +43,6 @@ export class NewMovieComponent {
     try {
       const addedMovie = await this.movieService.addNewMovie(movie);
       alert(`The movie ${addedMovie?.original_title} was successfully added`);
-      console.log('Movie added successfully:', addedMovie);
     } catch (error) {
       console.error('Error adding movie:', error);
     }
@@ -58,5 +60,5 @@ export class NewMovieComponent {
     return this.dbMovies.some((movie) => movie.id === movieId);
   }
 
-  clearMoviesList() { }
+
 }

@@ -7,9 +7,9 @@ import { movieObject } from 'src/@types/movie-object-type';
 })
 export class MovieCardComponent {
   @Input() movies: movieObject[] = [];
-  @Output() excluseMovie = new EventEmitter<movieObject>();
+  @Output() excludeMovie = new EventEmitter<movieObject>();
 
   markToExclude(movie: movieObject) {
-    this.excluseMovie.emit(movie);
+    this.excludeMovie.emit(movie);
   }
 }
