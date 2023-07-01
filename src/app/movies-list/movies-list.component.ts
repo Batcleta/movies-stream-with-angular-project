@@ -10,7 +10,7 @@ export class MoviesListComponent implements OnInit {
   movies: movieObject[] = [];
   watchedMovie!: movieObject;
 
-  constructor(private movieService: MovieService) {}
+  constructor(private movieService: MovieService) { }
 
   get nonWatchedMovies(): any[] {
     return this.movies.filter((movie) => !movie.watched);
@@ -32,10 +32,12 @@ export class MoviesListComponent implements OnInit {
     }
   }
 
-  onMovieExcluded(movie: movieObject) {
-    const movieIndex = this.movies.findIndex((m) => m.id === movie.id);
-    if (movieIndex !== -1) {
-      this.movies.splice(movieIndex, 1);
+  async onMovieExcluded(movie: movieObject) {
+    try {
+      const updatedMovie = await this.movieService.deleteMovie(movie);
+      console.log('Movie deleted successfully:', updatedMovie);
+    } catch (error) {
+      console.error('Error deleting movie:', error);
     }
   }
 }

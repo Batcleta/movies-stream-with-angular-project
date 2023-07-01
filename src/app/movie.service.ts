@@ -43,4 +43,14 @@ export class MovieService {
       throw error;
     }
   }
+
+  async deleteMovie(movie: movieObject): Promise<movieObject | undefined> {
+    try {
+      const url = `${this.dbUrl}/${movie.id}`
+
+      return await this.http.delete<movieObject>(url).toPromise();;
+    } catch (error) {
+      throw error;
+    }
+  }
 }

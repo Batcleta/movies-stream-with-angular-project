@@ -318,25 +318,6 @@
     },
     {
       "adult": false,
-      "backdrop_path": "/sFGENDTUNOuDbVufxksCkrDtuaT.jpg",
-      "genre_ids": [
-        53,
-        27
-      ],
-      "id": 713704,
-      "original_language": "en",
-      "original_title": "Evil Dead Rise",
-      "overview": "A reunion between two estranged sisters gets cut short by the rise of flesh-possessing demons, thrusting them into a primal battle for survival as they face the most nightmarish version of family imaginable.",
-      "popularity": 754.93,
-      "poster_path": "/5ik4ATKmNtmJU6AYD0bLm56BCVM.jpg",
-      "release_date": "2023-04-12",
-      "title": "Evil Dead Rise",
-      "video": false,
-      "vote_average": 7,
-      "vote_count": 1765
-    },
-    {
-      "adult": false,
       "backdrop_path": "/9t0tJXcOdWwwxmGTk112HGDaT0Q.jpg",
       "genre_ids": [
         27,
@@ -901,28 +882,6 @@
       "video": false,
       "vote_average": 4.9,
       "vote_count": 475,
-      "watched": true,
-      "rating": "liked",
-      "comment": "asdasdasd"
-    },
-    {
-      "adult": false,
-      "backdrop_path": "/bAcga9XzjfVoKDM80LBIinYBVAw.jpg",
-      "genre_ids": [
-        28,
-        12
-      ],
-      "id": 529106,
-      "original_language": "ru",
-      "original_title": "Майор Гром: Чумной Доктор",
-      "overview": "Igor Grom is a skilled policeman from St. Petersburg, known for his daring nature and uncompromising attitude towards the criminals of all kinds. Incredible strength, analytical mind and integrity – these qualities make Major Grom the perfect policeman. Working tirelessly, he always pushes through, and meets the challenges standing in the way.",
-      "popularity": 30.683,
-      "poster_path": "/wnesEmcq7xdw1Rm1Bn6XEFTkenR.jpg",
-      "release_date": "31/03/2021",
-      "title": "Major Grom: Plague Doctor",
-      "video": false,
-      "vote_average": 6.7,
-      "vote_count": 510,
       "watched": true,
       "rating": "liked",
       "comment": "asdasdasd"
