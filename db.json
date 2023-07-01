@@ -727,11 +727,14 @@
       "overview": "In the last months of World War II, as the Allies make their final push in the European theatre, a battle-hardened U.S. Army sergeant named 'Wardaddy' commands a Sherman tank called 'Fury' and its five-man crew on a deadly mission behind enemy lines. Outnumbered and outgunned, Wardaddy and his men face overwhelming odds in their heroic attempts to strike at the heart of Nazi Germany.",
       "popularity": 390.638,
       "poster_path": "/pfte7wdMobMF4CVHuOxyu6oqeeA.jpg",
-      "release_date": "2014-10-15",
+      "release_date": "14/10/2014",
       "title": "Fury",
       "video": false,
       "vote_average": 7.5,
-      "vote_count": 10818
+      "vote_count": 10818,
+      "watched": true,
+      "rating": "liked",
+      "comment": "The best fucking movie of war of all times. Fucking awesome man"
     },
     {
       "adult": false,
@@ -877,6 +880,29 @@
       "vote_count": 20610,
       "watched": true,
       "rating": "disliked",
+      "comment": "asdasdasd"
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/n9wlAmb4vEgZHghtqsXXj95PocJ.jpg",
+      "genre_ids": [
+        35,
+        12,
+        10751
+      ],
+      "id": 643215,
+      "original_language": "fr",
+      "original_title": "Astérix & Obélix : L'Empire du Milieu",
+      "overview": "Gallic heroes and forever friends Asterix and Obelix journey to China to help Princess Sa See save the Empress and her land from a nefarious prince.",
+      "popularity": 96.557,
+      "poster_path": "/ifOqT5SmA4ANjmyEacLw3KAFKUd.jpg",
+      "release_date": "31/01/2023",
+      "title": "Asterix & Obelix: The Middle Kingdom",
+      "video": false,
+      "vote_average": 4.9,
+      "vote_count": 475,
+      "watched": true,
+      "rating": "liked",
       "comment": "asdasdasd"
     }
   ]

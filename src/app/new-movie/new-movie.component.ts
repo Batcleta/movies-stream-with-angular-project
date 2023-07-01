@@ -6,7 +6,6 @@ import { MovieService } from '../movie.service';
 @Component({
   selector: 'app-new-movie',
   templateUrl: './new-movie.component.html',
-  styleUrls: ['./new-movie.component.css'],
 })
 export class NewMovieComponent {
   back = '<< Back';

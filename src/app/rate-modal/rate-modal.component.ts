@@ -4,7 +4,6 @@ import { movieWatched } from 'src/@types/movie-watched-type';
 @Component({
   selector: 'app-rate-modal',
   templateUrl: './rate-modal.component.html',
-  styleUrls: ['./rate-modal.component.css'],
 })
 export class RateModalComponent {
   @Output() rateSubmitted: EventEmitter<any> = new EventEmitter<any>();
