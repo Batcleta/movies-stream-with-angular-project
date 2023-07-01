@@ -34,8 +34,9 @@ export class MoviesListComponent implements OnInit {
 
   async onMovieExcluded(movie: movieObject) {
     try {
-      const updatedMovie = await this.movieService.deleteMovie(movie);
-      console.log('Movie deleted successfully:', updatedMovie);
+      await this.movieService.deleteMovie(movie);
+      window.location.reload()
+      alert('Movie deleted successfully:');
     } catch (error) {
       console.error('Error deleting movie:', error);
     }
